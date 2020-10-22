@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Unit</title>
+</head>
+
+<body>
+  <%- include("partials/navbar") %> <br>
+  <form action="/list-all/<%= dataUnit.id %>/edit-unit" method="POST">
+    <label>Name</label><br>
+    <input type="text" name="name" value="<%= dataUnit.name %>"><br><br>
+    <label>HP</label><br>
+    <input type="number" name="hp" value="<%= dataUnit.hp %>"><br><br>
+    <label>Damage</label><br>
+    <input type="number" name="damage" value="<%= dataUnit.damage %>"><br><br>
+    <label>Rarity</label><br>
+    <select name="RarityId">
+      <% data.forEach((el, index) => { %>
+      <option <% if(index === dataUnit.RarityId - 1) { %> selected <% }  %> value="<%= el.id %>"><%= el.name %></option>
+      <% })  %>
+    </select>
+    <input type="submit" value="submit">
+  </form>
+</body>
+
+</html>

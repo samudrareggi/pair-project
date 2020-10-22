@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include("partials/navbar-home") %>
+  <br>
+  <% if(error) { %>
+  <p style="color:red"><%= error %></p>
+  <% } %>
+  <form action="/login" method="POST">
+    <label>Email address</label><br>
+    <input type="email" name="email" placeholder="Enter email"><br><br>
+    <label>Password</label><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include("partials/navbar")  %>
+  <br>
+  <a href="/list-all/add-unit">Add Unit</a><br><br>
+  <table border="1">
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>HP</th>
+      <th>Damage</th>
+      <th>Rarity</th>
+      <th>Options</th>
+    </tr>
+    <% data.forEach((el,index) => { %>
+    <tr>
+      <td><%= index + 1 %> </td>
+      <td><%= el.name %></td>
+      <td><%= el.hp %></td>
+      <td><%= el.damage %></td>
+      <td><% if(!el.RarityId) { %>
+        Not Set
+        <% } else { %>
+        <%= el.Rarity.name %>
+        <% } %>
+      </td>
+      <td>
+        <a href="/list-all/<%= el.id %>/edit-unit">Edit</a>
+        <a href="/list-all/<%= el.id %>/delete-unit"">Delete</a>
+        <a href=" /list-all/<%= el.id %>/codex-unit"">Codex</a>
+      </td>
+    </tr>
+    <% })  %>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codex Unit</title>
+</head>
+
+<body>
+  <%- include("partials/navbar") %>
+  <h1><%= dataUnit.name %></h1><br><br>
+  <form action="/list-all/<%= dataUnit.id %>/codex-unit" method="POST">
+    <label>Add Class:</label><br>
+    <select name="ClassId">
+      <option default selected value="">--Select Class--</option>
+      <% dataClass.forEach(el => { %>
+      <option value=" <%= el.id %>"><%= el.name %>
+      </option>
+      <% }) %>
+    </select><br><br>
+    <label>Add Race:</label><br>
+    <select name="RaceId">
+      <option default selected value="">--Select Race--</option>
+      <% dataRace.forEach(el => { %>
+      <option value=" <%= el.id %>"><%= el.name %>
+      </option>
+      <% }) %>
+    </select><br><br>
+    <input type="submit" value="save">
+    <button type="button" onclick="location.href='/list-all/units'">cancel</button><br><br>
+  </form>
+  <h2>List Codex</h2>
+  <table border="1">
+    <tr>
+      <th>Class</th>
+      <th>Race</th>
+    </tr>
+    <% for(let i=0; i < dataUnit.UnitClassRaces.length; i++) { %>
+    <tr>
+      <% for(let j=0 ; j < dataClass.length ; j++) { %>
+      <% if(dataClass[j].id === dataUnit.UnitClassRaces[i].ClassId) { %>
+      <td>
+        <%= dataClass[j].name %>
+      </td>
+      <% } %>
+      <% } %>
+      <% for(let k=0 ; k < dataRace.length ; k++) { %>
+      <% if(dataRace[k].id === dataUnit.UnitClassRaces[i].RaceId) { %>
+      <td>
+        <%= dataRace[k].name %>
+      </td>
+      <% } %>
+      <% } %>
+    </tr>
+    <% } %>
+  </table>
+
+</body>
+
+</html>

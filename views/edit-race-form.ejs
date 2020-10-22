@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Race</title>
+</head>
+
+<body>
+  <%- include("partials/navbar") %> <br>
+  <form action="/list-all/<%= data.id %>/edit-race" method="POST">
+    <label>Name</label><br>
+    <input type="text" name="name" value="<%= data.name %>"><br><br>
+    <input type="submit" value="submit">
+  </form>
+</body>
+
+</html>

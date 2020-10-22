@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include("partials/navbar-home") %>
+
+  <form action="/register" method="POST">
+    <br>
+    <label>First name</label><br>
+    <input type="text" name="first_name" placeholder="e.g John"><br><br>
+    <label>Last name</label><br>
+    <input type="text" name="last_name" placeholder="e.g Doe"><br><br>
+    <label>Email address</label><br>
+    <input type="email" name="email" placeholder="Enter email"><br><br>
+    <label>Password</label><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</body>
+
+</html>

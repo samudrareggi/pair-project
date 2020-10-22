@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include("partials/navbar")  %>
+  <br>
+  <a href="/list-all/add-class">Add Class</a><br><br>
+  <table border="1">
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Options</th>
+    </tr>
+    <% data.forEach((el,index) => { %>
+    <tr>
+      <td><%= index + 1 %> </td>
+      <td><%= el.name %> </td>
+      <td><a href="/list-all/<%= el.id %>/edit-class">Edit</a>
+        <a href="/list-all/<%= el.id %>/delete-class">Delete</a>
+      </td>
+    </tr>
+    <% }) %>
+  </table>
+</body>
+
+</html>

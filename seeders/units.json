@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Bangar",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Nightingale",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Lucifer",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Stinger",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Witch Doctor",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Marsh Lord",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Venom",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Moonlight Dragon",
+    "hp": 2300,
+    "damage": 100
+  },
+  {
+    "name": "Dragoon",
+    "hp": 2300,
+    "damage": 100
+  }
+]
