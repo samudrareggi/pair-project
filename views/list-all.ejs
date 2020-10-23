@@ -4,14 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>List All</title>
 </head>
 
 <body>
   <%- include("partials/navbar")  %>
 
   <h2><a href="/list-all/tanker">Who's a tanker!</a></h2>
-  <h3><a href="">My Lineup</a></h3>
   <table border="1">
     <tr>
       <th>No</th>
@@ -19,6 +18,7 @@
       <th>Classes</th>
       <th>Races</th>
       <th>Rarities</th>
+      <th>Image</th>
     </tr>
     <% codex.forEach((el,index) => { %>
     <tr>
@@ -31,6 +31,7 @@
         <%= dataUnit[index].Rarity.name %>
         <% }  %>
       </td>
+      <td><img src="" alt=""></td>
     </tr>
     <% }) %>
   </table>

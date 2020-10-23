@@ -2,6 +2,22 @@ const express = require("express")
 const router = express.Router()
 const Controller = require("../controllers")
 
+const path = require("path")
+const multer = require("multer")
+const sharp = require("sharp")
+
+const uploadPath = path.join(__dirname, "../", "uploads")
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadPath)
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage })
+
 router.get("/", Controller.home)
 
 router.get("/register", Controller.registerForm)
@@ -32,6 +48,7 @@ router.use(function (req, res, next) {
 
 router.get("/list-all/units", Controller.listUnits)
 router.get("/list-all/add-unit", Controller.addUnitForm)
+// router.post("/list-all/add-unit", upload.single("avatar"), Controller.addUnit)
 router.post("/list-all/add-unit", Controller.addUnit)
 router.get("/list-all/:id/edit-unit", Controller.editUnitForm)
 router.post("/list-all/:id/edit-unit", Controller.editUnit)

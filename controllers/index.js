@@ -1,4 +1,4 @@
-const { User, Unit, Race, Class, Rarity, UnitClassRace } = require("../models")
+const { User, Unit, Race, Class, Rarity, UnitClassRace, Image } = require("../models")
 const bcrypt = require("bcryptjs")
 const combine = require("../helpers/combine")
 
@@ -124,6 +124,7 @@ class Controller {
 
   static addUnit(req, res) {
     const { name, hp, damage, RarityId } = req.body
+    let compressedImageFileSavePath = path.join
 
     Unit.create({ name, hp, damage, RarityId })
       .then(data => {
@@ -153,8 +154,8 @@ class Controller {
   static editUnit(req, res) {
     let unit = {
       name: req.body.name,
-      hp: +req.body.hp,
-      damage: +req.body.damage,
+      hp: req.body.hp,
+      damage: req.body.damage,
       RarityId: req.body.RarityId
     }
 
@@ -350,6 +351,7 @@ class Controller {
         res.send(err.message)
       })
   }
+
 }
 
 
