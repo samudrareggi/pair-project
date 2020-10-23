@@ -48,8 +48,8 @@ router.use(function (req, res, next) {
 
 router.get("/list-all/units", Controller.listUnits)
 router.get("/list-all/add-unit", Controller.addUnitForm)
-// router.post("/list-all/add-unit", upload.single("avatar"), Controller.addUnit)
-router.post("/list-all/add-unit", Controller.addUnit)
+router.post("/list-all/add-unit", upload.single("avatar"), Controller.addUnit)
+// router.post("/list-all/add-unit", Controller.addUnit)
 router.get("/list-all/:id/edit-unit", Controller.editUnitForm)
 router.post("/list-all/:id/edit-unit", Controller.editUnit)
 router.get("/list-all/:id/codex-unit", Controller.codexUnitForm)
